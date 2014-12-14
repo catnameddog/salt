@@ -1,3 +1,22 @@
+########################################
+# Service configurations
+######################################## 
+sshd:
+  pkg:
+    - name: openssh-server
+    - installed
+  service:
+    - running
+    - watch:
+      - file: /etc/ssh/sshd_config
+
+/etc/ssh/sshd_config:
+  file:
+    - managed
+    - source: salt://base/files/etc/ssh/sshd_config
+    - require:
+      - pkg: openssh-server
+
 ntpd:
   pkg:
     - name: ntp
@@ -14,6 +33,10 @@ ntpd:
     - require:
       - pkg: ntp
 
+
+########################################
+# User Authentication
+########################################
 cstoner:
   user.present:
     - fullname: Cye Stoner
