@@ -33,6 +33,10 @@ ntpd:
     - require:
       - pkg: ntp
 
+/etc/cloud/cloud.conf:
+  file:
+    - managed
+    - source: salt://base/files/etc/cloud/cloud.conf
 
 ########################################
 # User Authentication
@@ -51,4 +55,4 @@ AAAAB3NzaC1yc2EAAAADAQABAAABAQDQetaerKWD30yTGzM3/0DnbZKMhFcnhI0VuF/CpWbMVZ15wcbp
     - user: cstoner
     - enc: ssh-rsa
     - require:
-      - user: cstoner
+      - user: cstoner 
