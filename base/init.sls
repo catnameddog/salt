@@ -33,10 +33,10 @@ ntpd:
     - require:
       - pkg: ntp
 
-/etc/cloud/cloud.conf:
+/etc/cloud/cloud.cfg:
   file:
     - managed
-    - source: salt://base/files/etc/cloud/cloud.conf
+    - source: salt://base/files/etc/cloud/cloud.cfg
 
 ########################################
 # User Authentication
