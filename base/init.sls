@@ -38,6 +38,11 @@ ntpd:
     - managed
     - source: salt://base/files/etc/cloud/cloud.cfg
 
+/etc/dhcp/dhclient.conf:
+  file:
+    - managed
+    - source: salt://base/files/etc/dhcp/dhclient.conf
+
 ########################################
 # User Authentication
 ########################################
