@@ -9,4 +9,4 @@ $TTL    604800
        IN      NS      util01-priv.catnameddog.com.
 
 util01-priv.catnameddog.com.       IN       A      172.31.2.191
-www01.catnameddog.com.             IN       A      172.31.0.208 
+www01.catnameddog.com.             IN       A      172.31.36.1

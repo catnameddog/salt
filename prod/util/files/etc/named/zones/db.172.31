@@ -9,4 +9,4 @@ $TTL    604800
        IN      NS      util01-priv.catnameddog.com.
 
 191.2   IN      PTR     util01-priv.catnameddog.com. ; 172.31.2.191
-208.0   IN      PTR     www01.catnameddog.com.       ; 172.31.0.208
+1.36    IN      PTR     www01.catnameddog.com.       ; 172.31.36.1
