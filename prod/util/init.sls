@@ -17,12 +17,18 @@ salt-master:
     - require:
       - pkg: salt-master
 
+bind-utils:
+  pkg:
+    - installed
+
 bind-chroot:
   pkg:
     - installed
   service:
     - name: named
     - running
+    - watch:
+      - file: /etc/named*
 
 /etc/named.conf:
   file:
@@ -31,6 +37,18 @@ bind-chroot:
     - require:
       - pkg: bind-chroot
 
-bind-utils:
-  pkg:
-    - installed
+/etc/named/zones/db.catnameddog.com:
+  file:
+    - managed
+    - source: salt://util/files/etc/named/zones/db.catnameddog.com
+    - require:
+      - pkg: bind-chroot
+
+/etc/named/zones/db.172.31:
+  file:
+    - managed
+    - source: salt://util/files/etc/named/zones/db.172.31
+    - require:
+      - pkg: bind-chroot
+
+
